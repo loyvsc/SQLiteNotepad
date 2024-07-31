@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <DrawingImage x:Key="CreateNote">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V496 H496 V0 H0 Z">
+                <GeometryDrawing Brush="#FF1BCEB8" Geometry="F1 M496,496z M0,0z M496,248C496,384.8 384.8,496 248,496 111.2,496 0,384.8 0,248 0,111.2 111.2,0 248,0 384.8,0 496,111.2 496,248z" />
+                <GeometryDrawing Brush="#FF09ADB5" Geometry="F1 M496,496z M0,0z M248,0C384.8,0 496,111.2 496,248 496,384.8 384.8,496 248,496" />
+                <GeometryDrawing Brush="#FF0DBFBA" Geometry="F1 M496,496z M0,0z M72.8,72.8C169.6,-24 326.4,-24 423.2,72.8 520,169.6 520,326.4 423.2,423.2" />
+                <DrawingGroup Opacity="1">
+                    <GeometryDrawing Brush="#FFEEFFFF" Geometry="F1 M496,496z M0,0z M352.8,256L143.2,256C136.8,256 131.2,254.4 131.2,248 131.2,241.6 136.8,240 143.2,240L352.8,240C359.2,240 364.8,241.6 364.8,248 364.8,254.4 359.2,256 352.8,256z" />
+                    <GeometryDrawing Brush="#FFEEFFFF" Geometry="F1 M496,496z M0,0z M248,364C241.6,364,240,359.2,240,352L240,143.2C240,136.8 241.6,131.2 248,131.2 254.4,131.2 256,136 256,143.2L256,352.8C256,359.2,254.4,364,248,364z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
+</ResourceDictionary>
