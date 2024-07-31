@@ -7,5 +7,5 @@ public interface INoteService
     public Task AddNote(Note note, CancellationToken cancellationToken = default);
     public Task UpdateNote(Note note, CancellationToken cancellationToken = default);
     public Task RemoveNote(Note note, CancellationToken cancellationToken = default);
-    public Task<List<Note>> ToList();
+    public Task<List<Note>> ToList(CancellationToken cancellationToken = default);
 }
