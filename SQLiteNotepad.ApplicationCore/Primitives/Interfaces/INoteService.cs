@@ -4,8 +4,8 @@ namespace SQLiteNotepad.ApplicationCore.Primitives.Interfaces;
 
 public interface INoteService
 {
-    public Task AddNote(Note note);
-    public Task UpdateNote(Note note);
-    public Task RemoveNote(Note note);
+    public Task AddNote(Note note, CancellationToken cancellationToken = default);
+    public Task UpdateNote(Note note, CancellationToken cancellationToken = default);
+    public Task RemoveNote(Note note, CancellationToken cancellationToken = default);
     public Task<List<Note>> ToList();
 }
