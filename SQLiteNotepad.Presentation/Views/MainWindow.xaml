@@ -3,10 +3,58 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:SQLiteNotepad.Presentation.Views"
+        xmlns:viewmodels="clr-namespace:SQLiteNotepad.Presentation.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        d:DataContext="{d:DesignInstance viewmodels:MainWindowViewModel}"
+        Title="SQLiteNotepad - notepad using SQLite DBMS" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="150" MaxWidth="300"/>
+            <ColumnDefinition Width="0.0001*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0"
+                   FontFamily="{StaticResource Text}" Margin="10"
+                   FontSize="28"
+                   Content="Notes"/>
+            <Image Grid.Column="1"
+                   Source="{StaticResource CreateNote}"
+                   Height="50px"/>
+        </Grid>
+        
+        <ListBox Grid.Column="0"
+                 ItemsSource="{Binding Notes}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40px"/>
+                            <RowDefinition Height="40px"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Grid.Row="0"
+                               FontFamily="{StaticResource Text}"
+                               FontSize="24"
+                               Content="{Binding Name}"
+                               VerticalAlignment="Bottom"/>
+                        <Label Grid.Row="1"
+                               FontFamily="{StaticResource Text}"
+                               Foreground="Gray"
+                               FontSize="12"
+                               Content="{Binding Name}"
+                               VerticalAlignment="Bottom"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <GridSplitter Grid.Column="1" BorderBrush="Black" BorderThickness="0.2"/>
     </Grid>
 </Window>

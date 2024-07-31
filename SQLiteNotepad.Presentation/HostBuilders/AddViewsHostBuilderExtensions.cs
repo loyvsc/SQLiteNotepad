@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SQLiteNotepad.ApplicationCore.Primitives.Interfaces;
 using SQLiteNotepad.DAL.Services;
+using SQLiteNotepad.Presentation.ViewModels;
 using SQLiteNotepad.Presentation.Views;
 
 namespace SQLiteNotepad.Presentation.HostBuilders;
@@ -12,7 +13,10 @@ public static class AddViewsHostBuilderExtensions
     {
         host.ConfigureServices((hostContext, services) =>
         {
-            services.AddSingleton<MainWindow>();
+            services.AddSingleton<MainWindow>(x=> new MainWindow
+            {
+                DataContext = x.GetRequiredService<MainWindowViewModel>()
+            });
         });
         return host;
     }
